@@ -19,7 +19,7 @@ end
 
 # Find highest and minimal values
 def min_and_max
-  puts "\n- La crypto qui a la plus grosse valeur est: #{@my_hash.keys.max} (cours: #{@my_hash.values.max})"
+  puts "\n- La crypto qui a la plus grosse valeur est: #{@my_hash.select ..... } (cours: #{@my_hash.values.max})"
   puts "\n- La crypto qui a la plus petite valeur est: #{@my_hash.keys.min} (cours: #{@my_hash.values.min})"
 end
 
@@ -65,22 +65,7 @@ def perform
   contains_coin?
   less_than_6000?
   highest_less_than_6000?
-ending_message
+  ending_message
 end
 
 perform
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-puts
