@@ -68,11 +68,7 @@ def perform
 ending_message
 end
 
-#perform
-
-puts @my_hash
-
-
+perform
 
 
 
