@@ -3,7 +3,8 @@
 # Count number of journalists
 def number_of_journalists
 nb_of_journalist = @journalists.length
-  puts "Il y a #{nb_of_journalist} journalistes dans la liste!"
+
+  puts "\n- La liste contient #{nb_of_journalist} journaliste(s)"
 end
 
 # Count occurences that contain digits
@@ -14,7 +15,7 @@ def has_digits?(arr)
       total += 1
     end
   end
-  puts "Il y a #{total} Twitter handles qui contiennent au moins un chiffre"
+  puts "\n- #{total} Twitter handles contiennent au moins un chiffre"
 end
 
 # Count occurences that include "Aude"
@@ -25,7 +26,7 @@ end
        total += 1
     end
  end
-  puts "Il y a #{total} journaliste(s) qui s'appellent 'Aude'"
+  puts "\n- #{total} journaliste(s) s'appellent 'Aude'"
 end
 
 # Count occurences that start with an uppercase character
@@ -36,9 +37,10 @@ def starts_with_uppercase?(arr)
       total += 1
     end
   end
-  puts total
+  puts "\n- #{total} Twitter handles commencent par une majuscule"
 end
 
+# Count occurences that contain an uppercase character
 def contains_uppercase?(arr)
   total = 0
   arr.each do |str|
@@ -46,7 +48,23 @@ def contains_uppercase?(arr)
       total += 1
     end
   end
-  puts total
+  puts "\n- #{total} Twitter handles contiennent au moins une majuscule"
+end
+
+# Count number of underscores within all Twitter handles
+def contains_underscore(arr)
+  total = 0
+  arr.each do |str|
+    if str.include? "_"
+      total +=1
+    end
+  end
+  puts "\n- #{total} Twitter handles contiennent un '_' (underscore)"
+end
+
+# Sort journalists list by alphabetical order
+def alphabetical_order
+  puts "\n- Voici la liste des Twitter handles triée par ordre alphabétique : #{@journalists.sort}"
 end
 
 # Program execution
@@ -56,6 +74,8 @@ def perform
   count_name(@journalists)
   starts_with_uppercase?(@journalists)
   contains_uppercase?(@journalists)
+  contains_underscore(@journalists)
+  alphabetical_order
 end
 
 # Summon the mother fucking ruby program
